@@ -1,0 +1,8 @@
+FROM ardetect
+MAINTAINER HaeryangKim <ryang@crescai.com>
+
+COPY . /workspace
+WORKDIR /workspace
+
+
+CMD python3 -u src/main.py --rtsp_url $RTSP --port $PORT
