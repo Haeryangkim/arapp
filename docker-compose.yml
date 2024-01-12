@@ -6,6 +6,8 @@ services:
     environment:
       - RTSP=rtsp://admin:1q2w3e4r5t!@192.168.0.64:554/0/onvif/profile2/media.smp
       - PORT=8555
+      - TARGETID=1
+      - BASE_SIZE=100
     ports:
       - 8555:8555
   ar_app_8556:
@@ -13,5 +15,7 @@ services:
     environment:
       - RTSP=rtsp://admin:1q2w3e4r5t!@192.168.0.64:554/0/onvif/profile2/media.smp
       - PORT=8556
+      - TARGETID=1
+      - BASE_SIZE=100
     ports:
       - 8556:8556

@@ -1,8 +1,13 @@
-FROM ardetect
+FROM ubuntu:20.04
 MAINTAINER HaeryangKim <ryang@crescai.com>
+RUN apt update -y
+RUN apt install software-properties-common -y
+RUN add-apt-repository ppa:deadsnakes/ppa -y
+RUN apt install python3.9 -y
 
-COPY . /workspace
+
+COPY ./ /workspace
 WORKDIR /workspace
 
 
-CMD python3 -u src/main.py --rtsp_url $RTSP --port $PORT
+#CMD python3 -u src/main.py --rtsp_path $RTSP --outport $PORT --target_id $TARGETID --base_size $BASE_SIZE

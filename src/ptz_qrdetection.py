@@ -123,13 +123,11 @@ class ptz_class():
 
     def qr_detection(self,img):
         result = []
-        print('aaa1')
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         corners, ids, rejectedImgPoints = cv2.aruco.detectMarkers(gray, self.ARUCO_DICT_6X6, parameters=self.ARUCO_PARAMETERS)
         result.append((corners,ids,rejectedImgPoints))
         all_markers = []
 
-        print('aaa2')
         for num in range(11, 255, 80):
             ret, gray_thr = cv2.threshold(gray, num, 255, cv2.THRESH_BINARY)
             corners, ids, rejectedImgPoints = cv2.aruco.detectMarkers(gray_thr, self.ARUCO_DICT_6X6, parameters=self.ARUCO_PARAMETERS)
